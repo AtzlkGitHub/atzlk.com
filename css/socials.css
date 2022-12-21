@@ -1,10 +1,10 @@
 body {
-    background-color: rgb(66, 66, 66);
+    background-color: rgb(112, 89, 122);
 }
 
 header {
     overflow: auto;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     top: auto;
     margin-top: -8px;
     margin-left: -8px;
@@ -41,7 +41,7 @@ header a.active {
 .underline a {
     text-decoration-line: underline;
     text-decoration-style: straight;
-    text-decoration-color: white;
+    text-decoration-color: rgb(255, 255, 255);
 }
 
 .bottomheader {
@@ -106,7 +106,7 @@ header a.active {
 }
 
 footer {
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     position: fixed;
     left: 0;
     bottom: 0;
@@ -155,7 +155,7 @@ video {
 .dpunderline h1 {
     text-decoration-line: underline;
     text-decoration-style: straight;
-    text-decoration-color: black;
+    text-decoration-color: rgb(0, 0, 0);
 }
 
 #main p {
@@ -163,7 +163,8 @@ video {
     font-size: 30px;
     font-weight: Bold;
     font-family: Arial, Helvetica, sans-serif;
-    color: black;
+    color: rgb(233, 184, 203);
+    text-shadow: 2px 2px black;
 }
 
 #btn {
