@@ -1,0 +1,62 @@
+/* Reset default styles and apply some basic styles */
+body,
+h1,
+h2,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2d2c41;
+}
+
+header {
+    background-color: #343349;
+    padding: 20px;
+    color: #ffffff;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline;
+    margin-right: 1%;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* Maintain an aspect ratio of 16:9 for the video container */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 30%;
+}
+
+footer {
+    background-color: #be2f24;
+    padding: 5px;
+    color: #ffffff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}

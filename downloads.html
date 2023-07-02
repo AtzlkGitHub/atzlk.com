@@ -1,0 +1,64 @@
+<style>
+    .DownloadButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: rgb(169, 168, 248);
+        background-color: rgb(74, 74, 209);
+        text-decoration: none !important;
+        cursor: pointer;
+        height: 5%;
+        width: 20%;
+        font-weight: bold;
+
+        transition: tranform 1s ease;
+    }
+
+    .DownloadButton:hover {
+        transform: scale(1.05);
+        text-decoration: none !important;
+    }
+
+    .DownloadButton:active {
+        text-decoration: none !important;
+    }
+</style>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Atzlk</title>
+    <link rel="stylesheet" href="main-styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Atzlk.com</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="downloads.html">Downloads</a></li>
+                <li><a href="https://youtube.com/@Atzlk" target="_blank">YouTube</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <a href="Nici TPv13 Setup.exe" download>
+            <button class="DownloadButton"> Download Latest Version of Nici - The Platformer</button>
+        </a>
+
+        <a>
+            <button class="DownloadButton"> Download Button 2</button>
+        </a>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Atzlk. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
