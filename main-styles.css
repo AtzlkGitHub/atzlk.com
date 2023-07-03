@@ -1,4 +1,3 @@
-/* Reset default styles and apply some basic styles */
 body,
 h1,
 h2,
@@ -36,13 +35,23 @@ main {
     padding: 20px;
 }
 
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    /* Maintain an aspect ratio of 16:9 for the video container */
+footer {
+    background-color: #be2f24;
+    padding: 5px;
+    color: #ffffff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
 
-.video-container iframe {
+.VideoContainer {
+    position: relative;
+    padding-bottom: 56.25%;
+}
+
+.VideoContainer iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -56,15 +65,39 @@ main {
     text-align: left;
 }
 
-footer {
-    background-color: #be2f24;
-    padding: 5px;
-    color: #ffffff;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
+.MainText {
+    color: aliceblue;
+}
+
+.NormalText {
+    color: aliceblue;
+    font-weight: normal;
+    margin-top: 4%;
+}
+
+.ContactText {
+    color: aliceblue;
+    font-weight: normal;
+    margin-top: 1%;
+}
+
+.DescriptionSection {
+    width: 30%;
+    margin-right: 2%;
+}
+
+.VideoSection {
+    margin-right: 2%;
+}
+
+.Container {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.RemoveUnderline {
+    text-decoration: none !important;
 }
 
 .HomeButton {
@@ -75,4 +108,86 @@ footer {
 
 .HomeButton:hover {
     color: #08f8ec;
+}
+
+.DownloadButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: rgb(255, 255, 255);
+    background-color: rgb(74, 74, 209);
+    cursor: pointer;
+    height: 5%;
+    width: 20%;
+    font-weight: bold;
+    margin-bottom: 1%;
+    border: none;
+    border-radius: 5%;
+
+    transition: tranform 1s ease;
+}
+
+.DownloadButton:hover {
+    transform: scale(1.05);
+}
+
+.YouTubeButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    background-color: #c70000;
+    cursor: pointer;
+    height: 5%;
+    width: 100%;
+    font-weight: bolder;
+    margin-bottom: 0.5%;
+    border: none;
+    border-radius: 5%;
+}
+
+.YouTubeButton:hover {
+    background-color: #880000;
+}
+
+.TwitterButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    background-color: #0098c7;
+    cursor: pointer;
+    height: 5%;
+    width: 100%;
+    font-weight: bolder;
+    margin-bottom: 0.5%;
+    border: none;
+    border-radius: 5%;
+}
+
+.TwitterButton:hover {
+    background-color: #006888;
+}
+
+.DiscordButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    background-color: #3f4b57;
+    cursor: pointer;
+    height: 5%;
+    width: 100%;
+    font-weight: bolder;
+    margin-bottom: 0.5%;
+    border: none;
+    border-radius: 5%;
+}
+
+.DiscordButton:hover {
+    background-color: #2d3741;
 }
