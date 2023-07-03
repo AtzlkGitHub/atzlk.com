@@ -4,24 +4,25 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        color: rgb(169, 168, 248);
+        color: rgb(255, 255, 255);
         background-color: rgb(74, 74, 209);
-        text-decoration: none !important;
         cursor: pointer;
         height: 5%;
         width: 20%;
         font-weight: bold;
+        margin-bottom: 1%;
+        border: none;
+        border-radius: 5%;
 
         transition: tranform 1s ease;
     }
 
-    .DownloadButton:hover {
-        transform: scale(1.05);
+    .RemoveUnderline {
         text-decoration: none !important;
     }
 
-    .DownloadButton:active {
-        text-decoration: none !important;
+    .DownloadButton:hover {
+        transform: scale(1.05);
     }
 </style>
 
@@ -37,23 +38,44 @@
 
 <body>
     <header>
-        <h1>Welcome to Atzlk.com</h1>
+        <h1>Welcome to atzlk.com</h1>
+        <p class="WebsiteParagraph">Socials and other pages</p>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="downloads.html">Downloads</a></li>
-                <li><a href="https://youtube.com/@Atzlk" target="_blank">YouTube</a></li>
+                <li><a href="index.html" class="HomeButton">Home</a></li>
+                <li><a href="downloads.html" class="HomeButton">Downloads</a></li>
+                <li><a href="https://youtube.com/@Atzlk" target="_blank" class="HomeButton">YouTube</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <a href="/downloadfiles/Nici TPv13 Setup.exe" download>
-            <button class="DownloadButton"> Download Latest Version of Nici - The Platformer</button>
+        <a class="RemoveUnderline">
+            <button class="DownloadButton"> Download Button 1</button>
         </a>
 
-        <a>
+        <a class="RemoveUnderline">
             <button class="DownloadButton"> Download Button 2</button>
+        </a>
+
+        <a class="RemoveUnderline">
+            <button class="DownloadButton"> Download Button 3</button>
+        </a>
+
+        <a class="RemoveUnderline">
+            <button class="DownloadButton"> Download Button 4</button>
+        </a>
+
+        <a class="RemoveUnderline">
+            <button class="DownloadButton"> Download Button 5</button>
+        </a>
+
+        <a class="RemoveUnderline">
+            <button class="DownloadButton"> Download Button 6</button>
+        </a>
+
+        <a class="RemoveUnderline">
+            <button class="DownloadButton"> Download Button 7</button>
         </a>
     </main>
 

@@ -10,10 +10,16 @@
 
     .DescriptionSection {
         width: 30%;
+        margin-right: 2%;
     }
 
     .VideoSection {
-        margin-top: 2%;
+        margin-right: 2%;
+    }
+
+    .Container {
+        display: flex;
+        flex-direction: row;
     }
 </style>
 
@@ -29,32 +35,43 @@
 
 <body>
     <header>
-        <h1>Welcome to Atzlk.com</h1>
+        <h1>Welcome to atzlk.com</h1>
+        <p class="WebsiteParagraph">Socials and other pages</p>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="downloads.html">Downloads</a></li>
-                <li><a href="https://youtube.com/@Atzlk" target="_blank">YouTube</a></li>
+                <li><a href="index.html" class="HomeButton">Home</a></li>
+                <li><a href="downloads.html" class="HomeButton">Downloads</a></li>
+                <li><a href="https://youtube.com/@Atzlk" target="_blank" class="HomeButton">YouTube</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="DescriptionSection">
-            <h2 class="MainText">What is this website?</h2>
-            <p class="NormalText">This website is home to most games that you see made on my YouTube channel. Here you
-                can find all my socials and download games that I have created. This website is a work in progress, so
-                it may not look the best as of right now, but hopfully it will look even better in the future. Enjoy!
-            </p>
-        </section>
+        <div class="Container">
+            <section class="DescriptionSection">
+                <h2 class="MainText">What is this website?</h2>
+                <p class="NormalText">This website is home to most games that you see made on my YouTube channel. Here you
+                    can find all my socials and download games that I have created. This website is a work in progress, so
+                    it may not look the best as of right now, but hopfully it will look even better in the future. Enjoy!
+                </p>
+            </section>
+    
+            <section class="VideoSection">
+                <h2 class="MainText">Latest Video released on the Atzlk channel</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed?listType=playlist&list=PL1rtTAbMZZFYooQNIgr6K4_zkhsK7hDBP">
+                    </iframe>
+                </div>
+            </section>
 
-        <section class="VideoSection">
-            <h2 class="MainText">Latest Video released on the Atzlk channel</h2>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed?listType=playlist&list=PL1rtTAbMZZFYooQNIgr6K4_zkhsK7hDBP">
-                </iframe>
-            </div>
-        </section>
+            <section>
+                <h2 class="MainText">Latest Video released on the Klzta channel</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed?listType=playlist&list=PL3opDZTPxF0ySVbM8yPOEEXGQ72EE1_yB">
+                    </iframe>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer>

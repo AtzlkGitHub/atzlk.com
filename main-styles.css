@@ -14,7 +14,7 @@ body {
 
 header {
     background-color: #3c3d50;
-    padding: 20px;
+    padding: 10px;
     color: #ffffff;
 }
 
@@ -46,8 +46,14 @@ main {
     position: absolute;
     top: 0;
     left: 0;
-    width: 30%;
-    height: 30%;
+    width: 100%;
+    height: 100%;
+}
+
+.WebsiteParagraph {
+    color: rgb(156, 156, 156);
+    font-weight: bolder;
+    text-align: left;
 }
 
 footer {
@@ -59,4 +65,12 @@ footer {
     bottom: 0;
     width: 100%;
     text-align: center;
+}
+
+.HomeButton {
+    color: white;
+}
+
+.HomeButton:hover {
+    color: #08f8ec;
 }
