@@ -69,6 +69,8 @@ footer {
 
 .HomeButton {
     color: white;
+    text-decoration: none;
+    list-style: none;
 }
 
 .HomeButton:hover {
