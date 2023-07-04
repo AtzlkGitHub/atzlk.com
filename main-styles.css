@@ -70,7 +70,7 @@ footer {
 }
 
 .NormalText {
-    color: aliceblue;
+    color: #cecece;
     font-weight: normal;
     margin-top: 4%;
 }
@@ -93,7 +93,13 @@ footer {
 .Container {
     display: flex;
     flex-direction: row;
-    
+}
+
+.DownloadThumbnail {
+    height: 30%;
+    width: 30%;
+    margin-right: 1%;
+    margin-bottom: 1%;
 }
 
 .RemoveUnderline {
