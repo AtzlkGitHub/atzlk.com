@@ -115,6 +115,11 @@ canvas {
     color: #ffffff;
 }
 
+.main h2 {
+    text-align: left;
+    color: #ffffff;
+}
+
 /* Contact Section */
 .contact-section {
     display: flex;
