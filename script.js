@@ -54,6 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
     updateBackgroundPosition();
 });*/
 
+document.addEventListener('touchmove', function(event) {
+    event.preventDefault(); // Comment out or remove this line
+}, { passive: false });  
+
 const canvas = document.getElementById("interactive-background");
 const ctx = canvas.getContext("2d");
 
