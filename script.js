@@ -63,7 +63,7 @@ const ctx = canvas.getContext("2d");
 
 let particles = [];
 const mouse = { x: null, y: null };
-const maxDistance = 200; // Maximum distance for connecting lines
+const maxDistance = 175; // Maximum distance for connecting lines
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -86,7 +86,7 @@ class Particle {
     constructor(x, y) {
         this.x = x || Math.random() * canvas.width;
         this.y = y || Math.random() * canvas.height;
-        this.size = 1; // Size of the particle
+        this.size = 0; // Size of the particle
         this.baseX = this.x;
         this.baseY = this.y;
         this.speedX = (Math.random() - 0.5);
@@ -96,7 +96,7 @@ class Particle {
     draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = "white";
+        ctx.fillStyle = "rgba(100, 100, 100, 0.5)";
         ctx.fill();
     }
 
@@ -116,7 +116,7 @@ class Particle {
 // Initialize particles
 function initParticles() {
     particles = [];
-    const numParticles = 100; // Number of particles
+    const numParticles = 200; // Number of particles
     for (let i = 0; i < numParticles; i++) {
         particles.push(new Particle());
     }
@@ -144,8 +144,8 @@ function animateParticles() {
                 ctx.beginPath();
                 ctx.moveTo(particle.x, particle.y);
                 ctx.lineTo(otherParticle.x, otherParticle.y);
-                ctx.strokeStyle = "rgba(255, 255, 255, 0.2)";
-                ctx.lineWidth = 1;
+                ctx.strokeStyle = "rgba(100, 100, 100, 0.5)";
+                ctx.lineWidth = 0.5;
                 ctx.stroke();
             }
         });
