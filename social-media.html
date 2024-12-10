@@ -9,15 +9,57 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="navbar"></div>
-
+    <div class="navbar">
+        <div class="logo">
+            <a href="index.html"><strong>Atzlk</strong></a>
+        </div>
+    
+        <!-- Hamburger menu icon for mobile -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </div>
+    
+        <!-- Main menu that will be shown/hidden on click -->
+        <div class="menu">
+            <a href="index.html">HOME</a>
+            <a href="what-we-do.html">WHAT WE DO</a>
+            <a href="why-us.html">WHY US</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="social-media.html">SOCIAL MEDIA</a>
+        </div>
+    </div>
+    
     <div class="main">
         <h1>SOCIAL MEDIA</h1>
-        <p></p>
+        <div class="social-section">
+            <div class="social-card">
+                <img src="images/instagram-icon.png" alt="Instagram Icon">
+                <h2>@louis.ceo_</h2>
+                <a href="https://www.instagram.com/louis.ceo_" target="_blank">VISIT</a>
+            </div>
+            <div class="social-card">
+                <img src="images/tiktok-icon.png" alt="TikTok Icon">
+                <h2>@louisceo</h2>
+                <a href="https://www.tiktok.com/@louisceo" target="_blank">VISIT</a>
+            </div>
+            <div class="social-card">
+                <img src="images/youtube-icon.png" alt="YouTube Icon">
+                <h2>N/A</h2>
+                <a href="#" target="_blank">COMING SOON</a>
+            </div>
+            <div class="social-card">
+                <img src="images/x-icon.png" alt="X Icon">
+                <h2>N/A</h2>
+                <a href="#" target="_blank">COMING SOON</a>
+            </div>
+        </div>
     </div>
 
-    <div id="footer"></div>
-
+    <div class="footer">
+        <p>&copy; 2024 Atzlk | All rights reserved | To contact our team, please send an email at contact@atzlk.com</p>
+    </div>
     <canvas id="interactive-background"></canvas>
 </body>
 </html>

@@ -40,8 +40,8 @@ canvas {
 
 /* Navigation Bar */
 .navbar {
-    background-color: #000000b4;
-    color: rgb(255, 255, 255);
+    background-color: #000000b4; /* Original background color */
+    color: rgb(255, 255, 255); /* Text color */
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -50,6 +50,7 @@ canvas {
     position: relative;
     top: 0;
     z-index: 10;
+    box-sizing: border-box; /* Ensure the navbar size includes padding */
 }
 
 .navbar .logo a {
@@ -63,34 +64,70 @@ canvas {
 .navbar .menu {
     display: flex;
     gap: 1rem;
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 .navbar .menu a {
-    color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255); /* White color for the links */
     text-decoration: none;
 }
 
 .navbar .menu a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline on hover for links */
 }
 
-/* Mobile Navigation */
+/* Hamburger Menu for Mobile */
 .navbar .menu-toggle {
-    display: none;
-    font-size: 1.5rem;
-    color: black;
+    display: none; /* Hide the hamburger by default */
+    flex-direction: column;
+    gap: 5px;
     cursor: pointer;
 }
 
-.navbar .menu.collapsed {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 1rem;
+.navbar .menu-toggle .hamburger-line {
+    width: 30px;
+    height: 4px;
+    background-color: #fff; /* White lines for the hamburger */
 }
 
-.navbar .menu-toggle.active + .menu {
-    display: flex;
+/* Mobile View */
+@media screen and (max-width: 768px) {
+    .navbar .menu {
+        display: none; /* Hide the menu on mobile by default */
+        position: fixed; /* Fixed positioning to stay in place */
+        top: 60px; /* Position the menu below the navbar */
+        right: 0; /* Align to the right */
+        background-color: #000000b4; /* Same background color as the navbar */
+        padding: 20px;
+        border-radius: 5px;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%; /* Full width of the viewport */
+        max-width: 250px; /* Limit the width of the menu */
+        height: 100%; /* Full height of the screen */
+        transform: translateX(100%); /* Initially position the menu off the screen */
+        transition: transform 0.3s ease-in-out; /* Smooth transition when opening */
+    }
+
+    /* Show the menu */
+    .navbar .menu.show {
+        display: flex; /* Show the menu when toggled */
+        transform: translateX(0); /* Slide the menu into view */
+    }
+
+    .navbar .menu-toggle {
+        display: flex; /* Show hamburger icon on mobile */
+    }
+
+    .navbar .menu a {
+        padding: 10px;
+        font-size: 1.2rem; /* Adjust the font size for mobile */
+    }
+
+    /* Prevent the body from scrolling when the menu is open */
+    body.menu-open {
+        overflow: hidden; /* Disable scrolling when the menu is open */
+    }
 }
 
 /* Main Section */
@@ -196,6 +233,80 @@ canvas {
 
 .contact-card p {
     margin: 0.05rem 0;
+}
+
+.contact-card:hover {
+    transform: scale(1.05);
+}
+
+/* Social Section */
+.social-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 100%;
+    padding: 1rem;
+}
+
+.social-card {
+    flex: 1 1 200px;
+    max-width: 300px;
+    background: #42424263;
+    padding: 0.5rem;
+    border-radius: 0px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.456);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: contain;
+    margin-top: 0.5rem;
+    box-sizing: border-box;
+}
+
+.social-card h2 {
+    margin-bottom: 0.1rem;
+    color: white;
+}
+
+.social-card a {
+    text-decoration: none;
+    color: #00aced;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.social-card a:hover {
+    color: #0077b5;
+}
+
+.social-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Initial State for Animation */
+._show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Initial hidden state */
+* {
+    opacity: 0;
+    transform: translateY(30px);
 }
 
 /* Footer */

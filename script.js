@@ -154,6 +154,38 @@ function animateParticles() {
     requestAnimationFrame(animateParticles);
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const allElements = document.querySelectorAll('*');
+
+    const revealOnScroll = () => {
+        allElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const viewportHeight = window.innerHeight;
+
+            // If the element is within 90% of the viewport, apply the animation
+            if (elementTop < viewportHeight * 0.9) {
+                element.classList.add('_show');
+            }
+        });
+    };
+
+    // Trigger animation on load
+    revealOnScroll();
+
+    // Trigger animation on scroll
+    window.addEventListener('scroll', revealOnScroll);
+});
+
+// Function to toggle the menu on mobile
+// Function to toggle the menu on mobile
+function toggleMenu() {
+    const menu = document.querySelector('.menu');
+    const body = document.querySelector('body'); // Get the body element
+
+    menu.classList.toggle('show'); // Toggles visibility of the menu
+    body.classList.toggle('menu-open'); // Lock/unlock scrolling on the body
+}
+
 // Initialize and animate
 initParticles();
 animateParticles();

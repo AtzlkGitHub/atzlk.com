@@ -9,7 +9,27 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="navbar"></div>
+    <div class="navbar">
+        <div class="logo">
+            <a href="index.html"><strong>Atzlk</strong></a>
+        </div>
+    
+        <!-- Hamburger menu icon for mobile -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </div>
+    
+        <!-- Main menu that will be shown/hidden on click -->
+        <div class="menu">
+            <a href="index.html">HOME</a>
+            <a href="what-we-do.html">WHAT WE DO</a>
+            <a href="why-us.html">WHY US</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="social-media.html">SOCIAL MEDIA</a>
+        </div>
+    </div>    
 
     <div class="main">
         <h1>CONTACT US</h1>
@@ -35,7 +55,9 @@
         </div>
     </div>
 
-    <div id="footer"></div>
+    <div class="footer">
+        <p>&copy; 2024 Atzlk | All rights reserved | To contact our team, please send an email at contact@atzlk.com</p>
+    </div>
     <canvas id="interactive-background"></canvas>
 </body>
 </html>
