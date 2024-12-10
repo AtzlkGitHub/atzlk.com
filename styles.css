@@ -12,21 +12,11 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100vh;
-    overflow: auto;
     z-index: -2;
 }
 
 html, body, .container {
     height: auto; /* Ensure it's not a fixed height */
-    overflow: visible; /* Allow scrolling */
-  }
-
-body {
-    -webkit-overflow-scrolling: touch;
-    /*background-image: url('images/BlackGround.jpg');
-    background-size: 120%;
-    background-position: center center;
-    background-repeat: no-repeat;*/
 }
 
 canvas {
@@ -94,7 +84,7 @@ canvas {
 @media screen and (max-width: 768px) {
     .navbar .menu {
         display: none; /* Hide the menu on mobile by default */
-        position: fixed; /* Fixed positioning to stay in place */
+        position: relative; /* Fixed positioning to stay in place */
         top: 60px; /* Position the menu below the navbar */
         right: 0; /* Align to the right */
         background-color: #000000b4; /* Same background color as the navbar */
@@ -122,11 +112,6 @@ canvas {
     .navbar .menu a {
         padding: 10px;
         font-size: 1.2rem; /* Adjust the font size for mobile */
-    }
-
-    /* Prevent the body from scrolling when the menu is open */
-    body.menu-open {
-        overflow: hidden; /* Disable scrolling when the menu is open */
     }
 }
 
@@ -344,7 +329,6 @@ canvas {
 
     .container, .content {
         height: auto;
-        overflow-y: auto;
       }
 }
 
