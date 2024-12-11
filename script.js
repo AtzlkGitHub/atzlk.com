@@ -162,8 +162,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const elementTop = element.getBoundingClientRect().top;
             const viewportHeight = window.innerHeight;
 
-            // If the element is within 90% of the viewport, apply the animation
-            if (elementTop < viewportHeight * 0.9) {
+            // If the element is within 95% of the viewport, apply the animation
+            if (elementTop < viewportHeight * 0.95) {
                 element.classList.add('_show');
             }
         });
@@ -176,6 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', revealOnScroll);
 });
 
+// Video play function
 function playVideo() {
     const video = document.getElementById('introVideo');
     video.play();
@@ -194,9 +195,11 @@ function toggleMenu() {
 document.body.style.overflow = 'auto';
 document.documentElement.style.overflow = 'auto';
 
+// Activate background particles
 initParticles();
 animateParticles();
 
+// Custom scroll function
 document.addEventListener('DOMContentLoaded', () => {
     let isTouching = false; // Flag for touch detection
     let startY = 0; // Start Y position for touch
@@ -215,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const deltaY = event.touches[0].clientY - startY;
             window.scrollTo({
                 top: currentScroll - deltaY,
-                behavior: 'smooth', // Enables smooth scrolling
+                behavior: 'instant', // Enables smooth scrolling
             });
         }
     };
