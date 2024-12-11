@@ -191,6 +191,9 @@ function toggleMenu() {
     body.classList.toggle('menu-open'); // Lock/unlock scrolling on the body
 }
 
+document.body.style.overflow = 'auto';
+document.documentElement.style.overflow = 'auto';
+
 // Initialize and animate
 initParticles();
 animateParticles();

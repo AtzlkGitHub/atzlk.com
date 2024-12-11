@@ -11,7 +11,7 @@ body, html {
     min-height: 100vh; /* Ensure body takes full height of the viewport */
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: auto;
     z-index: -2;
 }
 
