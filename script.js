@@ -201,60 +201,33 @@ animateParticles();
 
 // Custom scroll function
 document.addEventListener('DOMContentLoaded', () => {
-    let isTouching = false; // Tracks if the user is interacting with the page
-    let startY = 0; // Initial touch Y-coordinate
-    let scrollY = 0; // Tracks the current scroll position
-    let velocity = 0; // Tracks the speed of scrolling
-    let animationFrame; // Tracks the current animation frame
+    let isTouching = false; // Flag for touch detection
+    let startY = 0; // Start Y position for touch
+    let currentScroll = 0; // Track scroll position
 
-    const SCROLL_DECAY = 0.95; // Deceleration factor for inertia
-    const MAX_SCROLL_SPEED = 20; // Maximum scrolling speed
-    const content = document.documentElement; // The content to scroll
-
-    // Handle touch start
-    const onTouchStart = (event) => {
-        isTouching = true;
-        startY = event.touches[0].clientY;
-        cancelAnimationFrame(animationFrame); // Stop any ongoing animation
+    const handleTouchStart = (event) => {
+        if (event.touches.length === 1) {
+            isTouching = true;
+            startY = event.touches[0].clientY;
+            currentScroll = window.scrollY;
+        }
     };
 
-    // Handle touch move
-    const onTouchMove = (event) => {
-        if (!isTouching) return;
-
-        const currentY = event.touches[0].clientY;
-        const deltaY = startY - currentY;
-
-        velocity = Math.max(-MAX_SCROLL_SPEED, Math.min(MAX_SCROLL_SPEED, deltaY));
-        scrollY += deltaY;
-        content.scrollTop = scrollY;
-
-        startY = currentY;
+    const handleTouchMove = (event) => {
+        if (isTouching && event.touches.length === 1) {
+            const deltaY = event.touches[0].clientY - startY;
+            window.scrollTo({
+                top: currentScroll - deltaY,
+                behavior: 'smooth', // Enables smooth scrolling
+            });
+        }
     };
 
-    // Handle touch end
-    const onTouchEnd = () => {
+    const handleTouchEnd = () => {
         isTouching = false;
-
-        // Apply inertia
-        const applyInertia = () => {
-            if (isTouching) return;
-
-            velocity *= SCROLL_DECAY;
-            scrollY += velocity;
-            content.scrollTop = scrollY;
-
-            if (Math.abs(velocity) > 0.1) {
-                animationFrame = requestAnimationFrame(applyInertia);
-            }
-        };
-
-        applyInertia();
     };
 
-    // Attach event listeners
-    document.addEventListener('touchstart', onTouchStart, { passive: true });
-    document.addEventListener('touchmove', onTouchMove, { passive: false });
-    document.addEventListener('touchend', onTouchEnd, { passive: true });
-    document.addEventListener('touchcancel', onTouchEnd, { passive: true });
+    document.addEventListener('touchstart', handleTouchStart, { passive: true });
+    document.addEventListener('touchmove', handleTouchMove, { passive: false });
+    document.addEventListener('touchend', handleTouchEnd, { passive: true });
 });
