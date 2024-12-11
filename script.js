@@ -194,6 +194,37 @@ function toggleMenu() {
 document.body.style.overflow = 'auto';
 document.documentElement.style.overflow = 'auto';
 
-// Initialize and animate
 initParticles();
 animateParticles();
+
+document.addEventListener('DOMContentLoaded', () => {
+    let isTouching = false; // Flag for touch detection
+    let startY = 0; // Start Y position for touch
+    let currentScroll = 0; // Track scroll position
+
+    const handleTouchStart = (event) => {
+        if (event.touches.length === 1) {
+            isTouching = true;
+            startY = event.touches[0].clientY;
+            currentScroll = window.scrollY;
+        }
+    };
+
+    const handleTouchMove = (event) => {
+        if (isTouching && event.touches.length === 1) {
+            const deltaY = event.touches[0].clientY - startY;
+            window.scrollTo({
+                top: currentScroll - deltaY,
+                behavior: 'smooth', // Enables smooth scrolling
+            });
+        }
+    };
+
+    const handleTouchEnd = () => {
+        isTouching = false;
+    };
+
+    document.addEventListener('touchstart', handleTouchStart, { passive: true });
+    document.addEventListener('touchmove', handleTouchMove, { passive: false });
+    document.addEventListener('touchend', handleTouchEnd, { passive: true });
+});
