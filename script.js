@@ -176,7 +176,12 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', revealOnScroll);
 });
 
-// Function to toggle the menu on mobile
+function playVideo() {
+    const video = document.getElementById('introVideo');
+    video.play();
+    document.querySelector('.play-button').style.display = 'none'; // Hide the button after play
+}
+
 // Function to toggle the menu on mobile
 function toggleMenu() {
     const menu = document.querySelector('.menu');
